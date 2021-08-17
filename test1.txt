@@ -3,9 +3,6 @@ This is a test file.
 #include <math.h>
 int main()
 {
-    int a , b;
-    printf("please input a & b :\n");
-    scanf("%d %d", &a, &b);
-    printf("a + b = %d",a + b);
+    printf("Hellow World!\n");
     return 0;
 }
