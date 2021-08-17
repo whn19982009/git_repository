@@ -1,3 +1,4 @@
 #!/bin/bash
-echo "Hellow World!"
+read -d "abc" var
+echo $var
 
