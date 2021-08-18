@@ -19,5 +19,9 @@ then
 else
         echo "fail"
 fi
+<<<<<<< HEAD
 var="this is master"
+=======
+var="Creating a new branch is quick and simple"
+>>>>>>> far_test1
 
