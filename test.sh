@@ -19,5 +19,5 @@ then
 else
         echo "fail"
 fi
-var="test1"
+var="this is master"
 
