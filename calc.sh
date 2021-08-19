@@ -1,12 +1,27 @@
 #!/bin/bash
-read -p "please input expression >" exp 
-read -p "please input calc "
-echo "scale=4;$num1/$num2"|bc
-read -p "Decimal >" dec
-echo $(bc<<EOF
-obase=10;
-ibase=10;
-scale=$dec;
-$exp
-EOF
-)
+#dec表明输出小数时保留几位小数
+res=0
+dec=2
+while true
+do
+    read -p "please input operate number >" op_number
+    case $op_number in
+    0)
+        
+        exit
+        ;;
+    1)
+        read -p "please input expression >" exp 
+        res=$(echo "obase=10;ibase=10;scale=$dec;$exp"|bc)
+        echo "the result is $res"
+        
+        ;;
+    2)
+        read -p "please input scale >" temp
+        dec=$temp
+        ;;
+    *)
+        echo "please input right op_number"
+        ;;
+    esac
+done
