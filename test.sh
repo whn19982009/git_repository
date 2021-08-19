@@ -19,4 +19,4 @@ then
 else
         echo "fail"
 fi
-var="this is not a master"
+var="there are masters"
