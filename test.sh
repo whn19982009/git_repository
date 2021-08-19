@@ -19,4 +19,5 @@ then
 else
         echo "fail"
 fi
+
 var="there are masters"
