@@ -6,8 +6,9 @@ while true
 do
     read -p "please input operate number >" op_number
     case $op_number in
-    0)
-        
+    "esc")
+        read -p "output to file? [y\n]" temp1
+
         exit
         ;;
     1)
@@ -17,8 +18,8 @@ do
         
         ;;
     2)
-        read -p "please input scale >" temp
-        dec=$temp
+        read -p "please input scale >" temp2
+        dec=$temp1
         ;;
     *)
         echo "please input right op_number"
