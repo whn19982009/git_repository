@@ -15,7 +15,6 @@ do
         read -p "please input expression >" exp 
         res=$(echo "obase=10;ibase=10;scale=$dec;$exp"|bc)
         echo "the result is $res"
-        
         ;;
     2)
         read -p "please input scale >" temp2
