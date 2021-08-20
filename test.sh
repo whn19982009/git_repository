@@ -8,4 +8,11 @@
 #echo "传入参数个数:$#"
 #echo "传入的所有参数:$@"
 #================================
-
+url="https://WWW.baidu_ps.com"
+#echo ${url#*ps}
+#echo ${url##*ps}
+#echo ${url%*ps}
+#echo ${url%%*ps}
+#================================
+echo "$(echo ${url} | tr '[:upper:]' '[:lower:]')"
+echo "$(echo ${url} | tr '[:lower:]' '[:upper:]')"
