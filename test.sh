@@ -8,11 +8,19 @@
 #echo "传入参数个数:$#"
 #echo "传入的所有参数:$@"
 #================================
-url="https://WWW.baidu_ps.com"
+#url="https://WWW.baidu_ps.com"
 #echo ${url#*ps}
 #echo ${url##*ps}
 #echo ${url%*ps}
 #echo ${url%%*ps}
 #================================
-echo "$(echo ${url} | tr '[:upper:]' '[:lower:]')"
-echo "$(echo ${url} | tr '[:lower:]' '[:upper:]')"
+#echo "$(echo ${url} | tr '[:upper:]' '[:lower:]')"
+#cho "$(echo ${url} | tr '[:lower:]' '[:upper:]')"
+#================================
+#read tel
+#if [[ $tel =~ ^1[0-9]{10}$ ]] ; then
+#    echo "true
+#else
+#    echo "false"
+#fi
+#================================
