@@ -17,11 +17,16 @@
 #echo "$(echo ${url} | tr '[:upper:]' '[:lower:]')"
 #cho "$(echo ${url} | tr '[:lower:]' '[:upper:]')"
 #================================
-read tel
-file_name="calc_result.txt"
-if [[ $tel =~ ^[0-9]*[1-9][0-9]*$ ]] ; then
+#read tel
+#file_name="calc_result.txt"
+#if [[ $tel =~ ^[0-9]*[1-9][0-9]*$ ]] ; then
+#if [[ $tel =~ ^[0-9]*$ ]] ; then
     #echo "true" >>calc_result.txt
-    echo "true" >>$file_name
-else
-    echo "false" >>calc_result.txt
-fi
+    #echo "true" #>>$file_name
+#else
+    #echo "false" #>>calc_result.txt
+#fi
+dec=3
+read exp
+res=$( printf "%."$dec"f" $( echo "obase=10;ibase=10;scale=$dec;$exp"|bc ) )
+echo -e "\nresult=$res \n" 

@@ -17,8 +17,8 @@ do
             if [ "$exp" = "END" ] ; then
                 break
             else
-                res=$(echo "obase=10;ibase=10;scale=$dec;$exp"|bc)
-                echo "The result is $res  (scale:$dec)"
+                res=$( printf "%."$dec"f" $( echo "obase=10;ibase=10;scale=$dec;$exp"|bc ) )
+                echo -e "\nThe result is $res  (scale:$dec)\n"
                 if [ $out_flag = "y" ]; then
                     echo "output to file"
                     echo "$exp = $res" >>$file_name
@@ -30,7 +30,7 @@ do
         while read -p "Please input scale >" temp1
         do
             echo "set scale =$temp1"
-            if [[ $temp1 =~ ^\d+$ ]] ; then
+            if [[ $temp1 =~ ^[0-9]*$ ]] ; then
                 break
             else
                 echo "Please input right scale number"
@@ -41,7 +41,7 @@ do
     "output to file")
         read -p "output to file? [y\n]" temp2
         out_flag=$temp2
-        if [ out_flag = "y" ] ; then
+        if [ $out_flag = "y" ] ; then
             echo "Now output to file."
         else
             echo "Now output to screen."
