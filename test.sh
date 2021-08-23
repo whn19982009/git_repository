@@ -30,3 +30,4 @@ dec=3
 read exp
 res=$( printf "%."$dec"f" $( echo "obase=10;ibase=10;scale=$dec;$exp"|bc ) )
 echo -e "\nresult=$res \n" 
+echo -e "\nresult=\033[36m$res\033[0m\n"

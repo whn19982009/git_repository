@@ -8,7 +8,7 @@ select op_number in "calc" "set" "output to file" "esc"
 do
     case $op_number in
     "esc")
-        echo "Thanks for using."
+        echo -e "\033[32mThanks for using.\033[0m"
         break
         ;;
     "calc")
@@ -18,10 +18,12 @@ do
                 break
             else
                 res=$( printf "%."$dec"f" $( echo "obase=10;ibase=10;scale=$dec;$exp"|bc ) )
-                echo -e "\nThe result is $res  (scale:$dec)\n"
+                echo -e "\nThe result is \033[33m$res\033[0m  (scale:\033[31m$dec\033[0m)\n"
                 if [ $out_flag = "y" ]; then
-                    echo "output to file"
+                    echo -e "output to \033[31mfile\033[0m"
                     echo "$exp = $res" >>$file_name
+                else
+                    echo -e "output to \033[32mscreen\033[0m"
                 fi
             fi
         done
@@ -29,8 +31,8 @@ do
     "set")
         while read -p "Please input scale >" temp1
         do
-            echo "set scale =$temp1"
             if [[ $temp1 =~ ^[0-9]*$ ]] ; then
+                echo -e "set scale = \033[31m$temp1\033[0m"
                 break
             else
                 echo "Please input right scale number"
@@ -42,9 +44,9 @@ do
         read -p "output to file? [y\n]" temp2
         out_flag=$temp2
         if [ $out_flag = "y" ] ; then
-            echo "Now output to file."
+            echo -e "Now output to \033[31mfile\033[0m."
         else
-            echo "Now output to screen."
+            echo -e "Now output to \033[32mscreen\033[0m."
         fi
         ;;
     esac
