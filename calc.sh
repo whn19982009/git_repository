@@ -18,9 +18,9 @@ do
                 break
             else
                 res=$(echo "obase=10;ibase=10;scale=$dec;$exp"|bc)
-                echo "The result is $res"
+                echo "The result is $res  (scale:$dec)"
                 if [ $out_flag = "y" ]; then
-
+                    echo "output to file"
                     echo "$exp = $res" >>$file_name
                 fi
             fi
@@ -41,6 +41,11 @@ do
     "output to file")
         read -p "output to file? [y\n]" temp2
         out_flag=$temp2
+        if [ out_flag = "y" ] ; then
+            echo "Now output to file."
+        else
+            echo "Now output to screen."
+        fi
         ;;
     esac
 done
