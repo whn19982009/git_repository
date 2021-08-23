@@ -17,10 +17,11 @@
 #echo "$(echo ${url} | tr '[:upper:]' '[:lower:]')"
 #cho "$(echo ${url} | tr '[:lower:]' '[:upper:]')"
 #================================
-#read tel
-#if [[ $tel =~ ^1[0-9]{10}$ ]] ; then
-#    echo "true
-#else
-#    echo "false"
-#fi
-#================================
+read tel
+file_name="calc_result.txt"
+if [[ $tel =~ ^[0-9]*[1-9][0-9]*$ ]] ; then
+    #echo "true" >>calc_result.txt
+    echo "true" >>$file_name
+else
+    echo "false" >>calc_result.txt
+fi
